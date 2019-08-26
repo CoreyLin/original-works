@@ -435,7 +435,6 @@ BU1、Department1、BU2被以小写字母存储。这是因为Fabric CA使用Vip
 
 现在你已经成功注册了一个peer标识，您现在可以根据登记ID和secret(即上一节的密码)登记这个peer。这类似于登记引导标识，只是我们还将演示如何使用“-M”选项填充Hyperledger Fabric MSP(成员资格服务提供者)目录结构。
 
-The following command enrolls peer1. Be sure to replace the value of the “-M” option with the path to your peer’s MSP directory which is the ‘mspConfigPath’ setting in the peer’s core.yaml file. You may also set the FABRIC_CA_CLIENT_HOME to the home directory of your peer.
 下面的命令登记peer1。请确保将“-M”选项的值替换为你的peer的MSP目录的路径，该目录是peer的core.yaml中的‘mspConfigPath’设置。您还可以将FABRIC_CA_CLIENT_HOME设置为你的peer的主目录。
 
     export FABRIC_CA_CLIENT_HOME=$HOME/fabric-ca/clients/peer1

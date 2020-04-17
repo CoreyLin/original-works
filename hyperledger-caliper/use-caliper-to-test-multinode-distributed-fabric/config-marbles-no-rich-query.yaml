@@ -1,0 +1,76 @@
+---
+test:
+  name: marbles
+  description: marbles benchmark performance testing
+  clients:
+    type: local
+    number: 5
+  rounds:
+  - label: init
+    txNumber:
+    - 500
+    - 1000
+    - 1500
+    - 2000
+    - 2500
+    rateControl:
+    - type: fixed-rate
+      opts:
+        tps: 100
+    - type: fixed-rate
+      opts:
+        tps: 200
+    - type: fixed-rate
+      opts:
+        tps: 300
+    - type: fixed-rate
+      opts:
+        tps: 400
+    - type: fixed-rate
+      opts:
+        tps: 500
+    callback: benchmark/marbles_no_rich_query/init.js
+  - label: query
+    txNumber:
+    - 500
+    - 1000
+    - 1500
+    - 2000
+    - 2500
+    rateControl:
+    - type: fixed-rate
+      opts:
+        tps: 100
+    - type: fixed-rate
+      opts:
+        tps: 200
+    - type: fixed-rate
+      opts:
+        tps: 300
+    - type: fixed-rate
+      opts:
+        tps: 400
+    - type: fixed-rate
+      opts:
+        tps: 500
+    callback: benchmark/marbles_no_rich_query/query.js
+monitor:
+  type:
+  - docker
+  - process
+  docker:
+    name:
+    - http://orderer0ip:2375/orderer0.***.com
+    - http://org1ip:2375/peer0.org1.***.com
+    - http://org1ip:2375/peer1.org1.***.com
+    - http://org2ip:2375/peer0.org2.***.com
+    - http://org2ip:2375/peer1.org2.***.com
+    - http://org1ip:2375/dev-peer0.org1.***.com-marbles-v1
+    - http://org1ip:2375/dev-peer1.org1.***.com-marbles-v1
+    - http://org2ip:2375/dev-peer0.org2.***.com-marbles-v1
+    - http://org2ip:2375/dev-peer1.org2.***.com-marbles-v1
+  process:
+  - command: node
+    arguments: local-client.js
+    multiOutput: avg
+  interval: 1

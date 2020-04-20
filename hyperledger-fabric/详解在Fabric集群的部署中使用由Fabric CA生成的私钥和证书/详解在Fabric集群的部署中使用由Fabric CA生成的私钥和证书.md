@@ -18,11 +18,11 @@ zookeeper和kafka节点的部署不需要任何私钥和证书，但orderer的�
 
 configtxgen命令被用于创建genesis.block，channel.tx，Org1MSPanchors.tx，Org2MSPanchors.tx。且configtxgen命令会读取$FABRIC_CFG_PATH中的configtx.yaml文件中的配置。configtx.yaml文件中，对于每个组织，都有一个MSPDir配置项，指向该组织的msp文件夹，例如
 
-    MSPDir: crypto-config-by-CA/ordererOrganizations/yingzi.com/msp
+    MSPDir: crypto-config-by-CA/ordererOrganizations/mycompany.com/msp
 	
-	MSPDir: crypto-config-by-CA/peerOrganizations/org1.yingzi.com/msp
+	MSPDir: crypto-config-by-CA/peerOrganizations/org1.mycompany.com/msp
 	
-	MSPDir: crypto-config-by-CA/peerOrganizations/org2.yingzi.com/msp
+	MSPDir: crypto-config-by-CA/peerOrganizations/org2.mycompany.com/msp
 	
 注意，MSPDir指向的是一个组织的msp文件夹，而不是组织下具体的peer的msp文件夹。那么，一个组织的msp文件夹里面包含什么文件呢？
 

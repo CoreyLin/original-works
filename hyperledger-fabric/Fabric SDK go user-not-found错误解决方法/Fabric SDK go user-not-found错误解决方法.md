@@ -4,7 +4,7 @@
 
 方法一：
 
-* org1AdminChannelContext := sdk.ChannelContext("mychannel", fabsdk.WithUser("Admin"), fabsdk.WithOrg("org1.yingzi.com")) 注意参数是"Admin"，"Org1"，如果行不通，就把"Org1"改成"org1"
+* org1AdminChannelContext := sdk.ChannelContext("mychannel", fabsdk.WithUser("Admin"), fabsdk.WithOrg("org1.mycompany.com")) 注意参数是"Admin"，"Org1"，如果行不通，就把"Org1"改成"org1"
 
 * 代码默认找的Admin的证书的格式是：key.ID + "@" + key.MSPID + "-cert.pem"，所以把Admin@Org1MSP-cert.pem放在MSP下面
 

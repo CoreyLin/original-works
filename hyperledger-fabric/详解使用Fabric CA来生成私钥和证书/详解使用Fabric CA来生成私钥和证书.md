@@ -80,7 +80,7 @@ fabric-ca-server-config.yaml是自动产生的Fabric CA的配置文件。如果f
 
 把上述创建的fabric-ca-client子文件夹设置为FABRIC_CA_CLIENT_HOME环境变量
 
-    export FABRIC_CA_CLIENT_HOME=/home/yzapps/hyperledger/fabric-samples/yingzi/fabric-ca-client
+    export FABRIC_CA_CLIENT_HOME=/home/yzapps/hyperledger/fabric-samples/mycompany/fabric-ca-client
 	
 ### 3.2.产生org1的admin（管理员）的私钥和签名证书
 

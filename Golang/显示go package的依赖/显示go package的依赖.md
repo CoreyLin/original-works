@@ -6,9 +6,9 @@
 	   
 2. 对需要进行依赖分析的go package执行以下命令（由于篇幅限制，依赖没有显示完）
 
-		hp@▒ֿ▒1 MINGW64 /d/GOCODE/src/gitlab.yingzi.com/yingzi/Blockchain-Team/yingzi-app-chaincode/chaincode (master)
-		$ depth gitlab.yingzi.com/yingzi/Blockchain-Team/yingzi-app-chaincode/chaincode
-		gitlab.yingzi.com/yingzi/Blockchain-Team/yingzi-app-chaincode/chaincode
+		hp@▒ֿ▒1 MINGW64 /d/GOCODE/src/gitlab.mycompany.com/mycompany/Blockchain-Team/mycompany-app-chaincode/chaincode (master)
+		$ depth gitlab.mycompany.com/mycompany/Blockchain-Team/mycompany-app-chaincode/chaincode
+		gitlab.mycompany.com/mycompany/Blockchain-Team/mycompany-app-chaincode/chaincode
 		  ├ encoding/json
 		  ├ fmt
 		  ├ log

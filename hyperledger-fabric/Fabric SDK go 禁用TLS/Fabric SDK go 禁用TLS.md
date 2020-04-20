@@ -2,7 +2,7 @@
 
 一般我们用如下代码来New一个FabricSDK
 
-	configProvider := config.FromFile("D:\\GOCODE\\src\\gitlab.yingzi.com\\CoreyLin\\fabric-sdk-go-experiment\\config\\config_test.yaml")
+	configProvider := config.FromFile("D:\\GOCODE\\src\\gitlab.mycompany.com\\CoreyLin\\fabric-sdk-go-experiment\\config\\config_test.yaml")
 	sdk, err := fabsdk.New(configProvider)
 	
 如果遇到如下错误

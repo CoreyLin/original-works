@@ -40,9 +40,9 @@ Prometheus的告警分为两部分。Prometheus服务器中的告警规则向Ale
 
 	global:
 	  resolve_timeout: 5m
-	  smtp_smarthost: 'smtp.yingzi.com:25'
-	  smtp_from: 'blockchain@yingzi.com'
-	  smtp_auth_username: 'blockchain@yingzi.com'
+	  smtp_smarthost: 'smtp.mycompany.com:25'
+	  smtp_from: 'blockchain@mycompany.com'
+	  smtp_auth_username: 'blockchain@mycompany.com'
 	  smtp_auth_password: 'rTfb7nShI2y'
 	  smtp_require_tls: false
 
@@ -55,7 +55,7 @@ Prometheus的告警分为两部分。Prometheus服务器中的告警规则向Ale
 	receivers:
 	- name: 'team-blockchain-mails'
 	  email_configs:
-	  - to: 'linke@yingzi.com'
+	  - to: 'linke@mycompany.com'
 		require_tls: false
 	inhibit_rules:
 	  - source_match:
@@ -66,7 +66,7 @@ Prometheus的告警分为两部分。Prometheus服务器中的告警规则向Ale
 
 其中关键的配置如下：
 
-* smtp_smarthost：用于发送电子邮件的默认SMTP smarthost，包括端口号。这里smtp.yingzi.com:25就是邮件服务器的地址和端口。
+* smtp_smarthost：用于发送电子邮件的默认SMTP smarthost，包括端口号。这里smtp.mycompany.com:25就是邮件服务器的地址和端口。
 
 * smtp_from：The default SMTP From header field.我就设置为和smtp_auth_username相同的值，也就是用来发送告警邮件的邮箱账号。
 
@@ -74,7 +74,7 @@ Prometheus的告警分为两部分。Prometheus服务器中的告警规则向Ale
 
 * smtp_auth_password：邮箱账号的密码。
 
-* smtp_require_tls：SMTP TLS需求，默认是true，也就是需要tls，这样的话就需要提供tls证书以及CA证书，配置难度较高。暂且把这个值设置为false，即不需要tls。但是需要注意的是，即使这个地方设置为false，如果邮箱服务器端强制blockchain@yingzi.com这个邮箱必须用tls登录，那么会遇到如下错误，发送不了邮件
+* smtp_require_tls：SMTP TLS需求，默认是true，也就是需要tls，这样的话就需要提供tls证书以及CA证书，配置难度较高。暂且把这个值设置为false，即不需要tls。但是需要注意的是，即使这个地方设置为false，如果邮箱服务器端强制blockchain@mycompany.com这个邮箱必须用tls登录，那么会遇到如下错误，发送不了邮件
 
 	  level=error ts=2019-05-15T09:41:43.329538201Z caller=dispatch.go:264 component=dispatcher msg="Notify for alerts failed" num_alerts=1 err="x509: certificate signed by unknown authority"
 	

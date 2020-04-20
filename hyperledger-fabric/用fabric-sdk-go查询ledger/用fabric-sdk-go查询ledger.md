@@ -43,7 +43,7 @@
 
 	  org1AdminChannelContext := sdk.ChannelContext("mychannel", fabsdk.WithUser("Admin"), fabsdk.WithOrg("Org1"))
 	
-	证书的名字必须满足要求，经过实测，如果改成Admin@org1.yingzi.com-cert.pem，就会报以下错误
+	证书的名字必须满足要求，经过实测，如果改成Admin@org1.mycompany.com-cert.pem，就会报以下错误
 	
 	  failed to get client context to create channel client: user not found
 	  
@@ -53,15 +53,15 @@
 
 ## 3.配置peers的本地DNS映射
 
-由于在config_test.yaml里配置了几个peers:peer0.org1.yingzi.com,peer1.org1.yingzi.com,peer0.org2.yingzi.com,peer1.org2.yingzi.com，Fabric SDK客户端就会连接比如peer0.org1.yingzi.com:7051，所以需要配置DNS映射。
+由于在config_test.yaml里配置了几个peers:peer0.org1.mycompany.com,peer1.org1.mycompany.com,peer0.org2.mycompany.com,peer1.org2.mycompany.com，Fabric SDK客户端就会连接比如peer0.org1.mycompany.com:7051，所以需要配置DNS映射。
 
 windows中，在C:\Windows\System32\drivers\etc\HOSTS文件中加入以下内容
 
 	# used for Fabric SDK Go
-	172.**.***.62 peer0.org1.yingzi.com
-	172.**.***.62 peer1.org1.yingzi.com
-	172.**.***.63 peer0.org2.yingzi.com
-	172.**.***.63 peer1.org2.yingzi.com
+	172.**.***.62 peer0.org1.mycompany.com
+	172.**.***.62 peer1.org1.mycompany.com
+	172.**.***.63 peer0.org2.mycompany.com
+	172.**.***.63 peer1.org2.mycompany.com
 
 
 
